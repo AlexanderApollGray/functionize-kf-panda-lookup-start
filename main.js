@@ -1,5 +1,10 @@
 // Kung Fu Panda Character Look Up
 
+// Variables for HTML Elements
+let characterH2 = document.getElementById("character-name");
+let characterImg = document.getElementById("main-img");
+let characterQuote = document.getElementById("quote");
+
 // Event Listener
 document.getElementById('search').addEventListener('click', searchClicked);
 
@@ -11,53 +16,39 @@ function searchClicked() {
 
   // Test Input Variable and update the page
   if (name === 'po' || name === 'dragon warrior') {
-    // Update page to Po
-    document.getElementById('character-name').innerHTML = 'Po';
-    document.getElementById('main-img').src = 'img/po.png';
-    document.getElementById('quote').innerHTML =
-      'Buddy, I am the Dragon Warrior.';
+    setCharacter("Po", "po", 'Buddy, I am the Dragon Warrior.');
   } else if (name === 'tigress' || name === 'master tigress') {
-    // Update page to Tigress
-    document.getElementById('character-name').innerHTML = 'Master Tigress';
-    document.getElementById('main-img').src = 'img/tigress.png';
-    document.getElementById('quote').innerHTML = 'That was pretty hardcore!';
+    setCharacter("Tigress", "tigress", 'That was pretty hardcore!');
   } else if (name === 'mantis' || name === 'master mantis') {
-    // Update page to Mantis
-    document.getElementById('character-name').innerHTML = 'Master Mantis';
-    document.getElementById('main-img').src = 'img/mantis.png';
-    document.getElementById('quote').innerHTML = 'Fear the bug!';
+    setCharacter("Mantis", "mantis", 'Fear the bug!');
   } else if (name === 'monkey' || name === 'master monkey') {
-    // Update page to Monkey
-    document.getElementById('character-name').innerHTML = 'Master Monkey';
-    document.getElementById('main-img').src = 'img/monkey.png';
-    document.getElementById('quote').innerHTML = 'We should hang out.';
+    setCharacter("Monkey", "monkey", 'We should hang out.');
   } else if (name === 'crane' || name === 'master crane') {
-    // Update page to Crane
-    document.getElementById('character-name').innerHTML = 'Master Crane';
-    document.getElementById('main-img').src = 'img/crane.png';
-    document.getElementById('quote').innerHTML =
-      'You can chain my body, but you will never chain my warrior spirit!';
+    setCharacter("Crane", "crane", 'You can chain my body, but you will never chain my warrior spirit!');
   } else if (name === 'viper' || name === 'master viper') {
-    // Update page to Viper
-    document.getElementById('character-name').innerHTML = 'Master Viper';
-    document.getElementById('main-img').src = 'img/viper.png';
-    document.getElementById('quote').innerHTML =
-      "I don't need to bite to fight!";
+    setCharacter("Viper", "viper", "I don't need to bite to fight.");
   } else if (name === 'shifu' || name === 'master shifu') {
-    // Update page to Master Shifu
-    document.getElementById('character-name').innerHTML = 'Master Shifu';
-    document.getElementById('main-img').src = 'img/shifu.png';
-    document.getElementById('quote').innerHTML = 'There is now a Level Zero.';
+    setCharacter("Shifu", "shifu", 'There is now a level Zero.');
   } else if (name === 'ping' || name === 'mr. ping') {
-    // Update page to Mr. Ping
-    document.getElementById('character-name').innerHTML = 'Mr. Ping';
-    document.getElementById('main-img').src = 'img/mr-ping.png';
-    document.getElementById('quote').innerHTML =
-      'We are noodle folk, broth runs through our veins!';
+    setCharacter("Mr-ping", "mr-ping", 'We are noodle folk, broth runs thorugh out veins!.');
+  } else if (name === 'boss wolf' || name === 'villain wolf') {
+    setCharacter("Boss Wolf", "boss-wolf", "Guess nobody told you: If you mess with the wolf, you get the fangs.");
+  } else if (name === 'croc' || name === 'villain croc') {
+    setCharacter("Croc", "croc", 'The only her in this town is a dead one!');
+  } else if (name === 'kai' || name === 'villain kai') {
+    setCharacter("Kai", "kai", "Soon, I will have your power, too!");
+  } else if (name === 'shen' || name === 'villain shen') {
+    setCharacter("Shen", "shen", "The only reason you are still alive is that I find your stupidity mildly amusing.");
+  } else if (name === 'tai lung' || name === 'villain tai lung') {
+    setCharacter("Tai Lung", "tai-lung", "Finally, a worthy opponent! Our battle will be legendary!");
   } else {
-    // Update page to Question Mark
-    document.getElementById('character-name').innerHTML = '?????';
-    document.getElementById('main-img').src = 'img/question-mark.png';
-    document.getElementById('quote').innerHTML = 'Character Not Found';
+    setCharacter("?????", "question-mark", 'Character Not Found')
   }
+}
+
+// Update page to match selected character
+function setCharacter(characterName, imgName, quote) {
+  characterH2.innerHTML = characterName;
+  characterImg.src = `img/${imgName}.png`
+  characterQuote.innerHTML = quote;
 }
